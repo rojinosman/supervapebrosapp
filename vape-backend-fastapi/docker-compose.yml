@@ -1,0 +1,11 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      # uncomment to require x-api-key
+      # API_KEY: "some-secret"
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - ./data:/data
